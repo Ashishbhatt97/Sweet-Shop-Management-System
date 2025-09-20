@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(uuid())
+  email        String    @unique
+  username     String    @unique
+  password     String
+  name         String?
+  role         userRoles @default(USER)
+  isActive     Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  refreshToken String?
+
+  @@map("users")
+}
+
+model Sweet {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  category  String
+  price     Decimal  @db.Decimal(10, 2)
+  quantity  Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("sweets")
+}
+
+enum userRoles {
+  ADMIN
+  USER
+}

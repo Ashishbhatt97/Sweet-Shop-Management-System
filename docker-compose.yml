@@ -1,0 +1,58 @@
+services:
+  pgDB:
+    image: postgres:latest
+    container_name: pgDB
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=sweetsdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - sweet-app-network
+    restart: always
+
+  backend:
+    container_name: node-server
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@pgDB:5432/sweetsdb
+    depends_on:
+      - pgDB
+    networks:
+      - sweet-app-network
+    volumes:
+      - ./Backend:/app
+      - /app/node_modules
+    restart: always
+
+  frontend:
+    container_name: react-client
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:5000/api
+    depends_on:
+      - backend
+    networks:
+      - sweet-app-network
+    volumes:
+      - ./Frontend:/app
+      - /app/node_modules
+    restart: always
+
+networks:
+  sweet-app-network:
+    driver: bridge
+
+volumes:
+  db-data:
