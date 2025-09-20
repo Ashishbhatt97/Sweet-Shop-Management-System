@@ -181,7 +181,7 @@ docker compose up --build -d
 
 # Screenshots
 - **Homepage (Sweets List with Search/Filters)**: ![Sweets List](./images/Screenshot%202025-09-20%20180351.png)
-- **Purchase Modal**: ![Purchase Modal](./images/Screenshot%202025-09-20%20181442.png)
+- **Purchase Modal**: ![Purchase Modal](./images/Screenshot%202025-09-20%20181557.png)
 - **Admin Add Modal**: ![Add Sweet](./images/Screenshot%202025-09-20%20192112.png)
 - **Admin Edit Modal**: ![Admin Actions](./images/image.png)
 - **Admin Restock Modal**: ![Restock Modal](./images/Screenshot%202025-09-20%20181831.png)
