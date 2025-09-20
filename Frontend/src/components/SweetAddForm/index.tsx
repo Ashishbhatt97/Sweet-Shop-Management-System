@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useAddSweetMutation } from "@/services/sweetApi";
 import { SweetFormData, sweetSchema } from "@/types/sweets.types";
 import { toast } from "react-toastify";

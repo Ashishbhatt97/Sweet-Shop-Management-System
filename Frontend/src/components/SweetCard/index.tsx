@@ -5,7 +5,7 @@ import {
   useRestockSweetMutation,
 } from "@/services/sweetApi";
 import { Sweet } from "@/types/navlinks.types";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Trash2, Pencil, Plus } from "lucide-react";
 import { useMeQuery } from "@/services/api";
