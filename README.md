@@ -180,7 +180,8 @@ docker compose up --build -d
 - **Deployment**: Docker Compose.
 
 # Screenshots
-- **Homepage (Sweets List with Search/Filters)**: ![Sweets List](./images/Screenshot%202025-09-20%20180351.png)
+- **Homepage (Sweets List with Search/Filters) for Users**: ![Sweets List](./images/Screenshot%202025-09-20%20180351.png)
+- **Homepage (Admin View with Add/Edit/Restock/Delete)**: ![Admin View](./images/Screenshot%202025-09-20%20181739.png.png)
 - **Purchase Modal**: ![Purchase Modal](./images/Screenshot%202025-09-20%20181557.png)
 - **Admin Add Modal**: ![Add Sweet](./images/Screenshot%202025-09-20%20192112.png)
 - **Admin Edit Modal**: ![Admin Actions](./images/image.png)
